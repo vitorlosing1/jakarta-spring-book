@@ -13,7 +13,7 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    private List <Book> findAll() {
+    public List <Book> findAll() {
         return bookRepository.findAll();
     }
 
@@ -23,6 +23,10 @@ public class BookService {
     }
 
     public void insert (Book book) {
+        bookRepository.save(book);
+    }
+
+    public void save(Book book) {
         bookRepository.save(book);
     }
 }
